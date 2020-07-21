@@ -13,26 +13,12 @@ public class PlayerMovement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         verticalMove = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        PerformMove(rg2D, movement, speed);
+        Move(rg2D, movement, speed);
     }
 
-    public void PerformMove (Rigidbody2D rb, Vector2 movement, float speed)
-    {
-        AdjustOrientation(rb, movement);
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-    }
-
-    public void PerformMoveNormalized (Rigidbody2D rb, Vector2 movement, float speed)
+    public void Move (Rigidbody2D rb, Vector2 movement, float speed)
     {
         movement.Normalize();
-        PerformMove(rb, movement, speed);
-    }
-
-    public void AdjustOrientation (Rigidbody2D rb, Vector2 movement)
-    {
-        if (movement != Vector2.zero)
-        {
-            rb.rotation = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-        }
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 }

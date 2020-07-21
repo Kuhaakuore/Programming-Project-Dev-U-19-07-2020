@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5734244728980218219}
   - component: {fileID: 8979536954809004194}
   - component: {fileID: 3543182316476889702}
+  - component: {fileID: -7862610656196995687}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -96,9 +97,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   collided: 0
-  areaOfEffect: 15
-  pullForce: 7.7
+  areaOfEffect: 32.9
+  pullForce: 66
   enemies: []
+  rb: {fileID: -7862610656196995687}
 --- !u!58 &3543182316476889702
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115,3 +117,24 @@ CircleCollider2D:
   m_Offset: {x: 0.015447307, y: 0.012508152}
   serializedVersion: 2
   m_Radius: 0.97537565
+--- !u!50 &-7862610656196995687
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6473983542346863075}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
